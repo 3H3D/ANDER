@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Music Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <header class="profile">
+            <div class="avatar">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <h1 class="artist-name">Nama Artis / Label</h1>
+            <p class="artist-bio">Solo Artist • Singer • Songwriter • Music Producer • Audio Engineer</p>
+        </header>
+
+        <!-- Player Section -->
+        <section class="player-card">
+            <div class="track-info">
+                <h2 id="track-title">Judul Lagu Utama</h2>
+                <p id="track-artist">Nama Artis</p>
+            </div>
+            
+            <audio id="audio-player" src="song1.mp3"></audio>
+
+            <div class="controls">
+                <button id="prev-btn" class="ctrl-btn"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="play-btn" class="ctrl-btn play-main"><i class="fa-solid fa-play" id="play-icon"></i></button>
+                <button id="next-btn" class="ctrl-btn"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+
+            <div class="progress-container" id="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </section>
+
+        <!-- Tracklist Section -->
+        <section class="tracklist-section">
+            <h3>Diskografi / Tracklist</h3>
+            <ul class="track-list">
+                <li class="track-item active" data-src="song1.mp3" data-title="Judul Lagu 1" data-artist="Nama Artis">
+                    <span><i class="fa-solid fa-compact-disc"></i> Judul Lagu 1</span>
+                    <span class="badge">Play</span>
+                </li>
+                <li class="track-item" data-src="song2.mp3" data-title="Judul Lagu 2" data-artist="Nama Artis">
+                    <span><i class="fa-solid fa-compact-disc"></i> Judul Lagu 2</span>
+                    <span class="badge">Play</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Streaming Platform Links -->
+        <section class="links-section">
+            <h3>Dengarkan Di</h3>
+            <div class="social-links">
+                <a href="#" target="_blank" class="link-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                <a href="#" target="_blank" class="link-btn"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                <a href="#" target="_blank" class="link-btn"><i class="fa-brands fa-youtube"></i> YouTube Music</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
