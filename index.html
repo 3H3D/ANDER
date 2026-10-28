@@ -262,12 +262,12 @@
         }
 
         /* ===================================================
-           EFEK ANIMASI SCROLL REVEAL (MORTAR / BOUNCE UP)
+           EFEK ANIMASI SCROLL REVEAL (BISA BERULANG ATAS/BAWAH)
            =================================================== */
         .reveal {
             opacity: 0;
-            transform: translateY(50px) scale(0.95);
-            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(40px) scale(0.96);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             will-change: transform, opacity;
         }
 
@@ -367,7 +367,7 @@
         </p>
     </footer>
 
-    <!-- Script Animasi Scroll Reveal -->
+    <!-- Script Animasi Scroll Reveal (Bolak-balik) -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const reveals = document.querySelectorAll(".reveal");
@@ -376,10 +376,13 @@
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
+                    } else {
+                        // Animasi akan diulang saat discroll ke atas (keluar layar)
+                        entry.target.classList.remove("active");
                     }
                 });
             }, {
-                threshold: 0.15
+                threshold: 0.1
             });
 
             reveals.forEach((el) => observer.observe(el));
