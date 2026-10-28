@@ -320,6 +320,29 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Gaya Ikon Sosial Media di Footer */
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-socials a {
+            color: #c5c6c7;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: #66fcf1;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
@@ -412,6 +435,14 @@
     </section>
 
     <!-- Footer -->
+    <footer class="reveal">
+        <!-- Ikon Media Sosial di Bawah -->
+        <div class="footer-socials">
+            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://tidal.com/artist/84814563" target="_blank" title="Tidal"><i class="fa-brands fa-tidal"></i></a>
+            <a href="https://www.youtube.com/channel/UCiWwR7S1MS4EFT7MZ0fHfrA" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/anderr05" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
     <footer class="reveal">
         <p>&copy; 2026 FERWAP MUSIC ENTERTAINMENT. ALL RIGHTS RESERFED. | 
             <a href="https://ferwap.com/#privacy" target="_blank" style="color: #66fcf1; text-decoration: none;">PRIVACY POLICY</a> | 
