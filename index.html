@@ -18,6 +18,31 @@
             background-color: #0b0c10;
             color: #c5c6c7;
             text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Keyframes Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(102, 252, 241, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+            }
         }
 
         /* Navigasi / Navbar Atas */
@@ -26,7 +51,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 8%;
-            background: #1f2833;
+            background: rgba(31, 40, 51, 0.95);
+            backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -37,7 +63,12 @@
             font-size: 1.3rem;
             font-weight: bold;
             color: #66fcf1;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -51,7 +82,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: 0.2s;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
@@ -62,6 +93,7 @@
         .hero {
             padding: 60px 20px 40px;
             background: #1f2833;
+            animation: fadeIn 1s ease-out;
         }
 
         .profile-img {
@@ -76,12 +108,19 @@
             font-size: 2.2rem;
             color: #66fcf1;
             border: 2px solid #66fcf1;
+            animation: pulseGlow 3s infinite ease-in-out;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .artist-name {
             font-size: 2rem;
             color: #ffffff;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .artist-genre {
@@ -95,6 +134,7 @@
             max-width: 650px;
             margin: 0 auto;
             border-bottom: 1px solid #1f2833;
+            animation: fadeIn 1.2s ease-out;
         }
 
         .section h2 {
@@ -112,6 +152,11 @@
             height: 2px;
             background: #66fcf1;
             margin: 8px auto 0;
+            transition: width 0.3s ease;
+        }
+
+        .section:hover h2::after {
+            width: 70px;
         }
 
         /* Grid Diskografi / Rilisan */
@@ -126,12 +171,26 @@
             padding: 20px 15px;
             border-radius: 8px;
             border: 1px solid #2d3748;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .disc-card:hover {
+            transform: translateY(-8px);
+            border-color: #66fcf1;
+            box-shadow: 0 6px 15px rgba(102, 252, 241, 0.2);
         }
 
         .disc-card i {
             font-size: 2rem;
             color: #45a29e;
             margin-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .disc-card:hover i {
+            color: #66fcf1;
+            transform: scale(1.15) rotate(10deg);
         }
 
         .disc-card h3 {
@@ -165,13 +224,23 @@
             justify-content: center;
             gap: 10px;
             border: 1px solid #2d3748;
-            transition: 0.2s;
+            transition: all 0.3s ease;
         }
 
         .link-btn:hover {
             background-color: #2d3748;
             border-color: #66fcf1;
             color: #66fcf1;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(102, 252, 241, 0.25);
+        }
+
+        .link-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .link-btn:hover i {
+            transform: scale(1.2);
         }
 
         /* About & Contact Box */
@@ -182,6 +251,11 @@
             border: 1px solid #2d3748;
             font-size: 0.9rem;
             line-height: 1.5;
+            transition: border-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            border-color: #45a29e;
         }
 
         .email-link {
@@ -190,13 +264,28 @@
             font-weight: bold;
             display: inline-block;
             margin-top: 10px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
+        .email-link:hover {
+            opacity: 0.8;
+            transform: scale(1.03);
+        }
+
+        /* Footer */
         footer {
             padding: 25px 20px;
             font-size: 0.75rem;
             color: #666;
             background: #0b0c10;
+        }
+
+        footer a {
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -252,7 +341,7 @@
                 <i class="fa-brands fa-spotify"></i> Spotify
             </a>
             <a href="https://tidal.com/artist/84814563" target="_blank" class="link-btn">
-                <i class="fa-brands fa-Tidal"></i> Tidal
+                <i class="fa-brands fa-tidal"></i> Tidal
             </a>
             <a href="https://www.youtube.com/channel/UCiWwR7S1MS4EFT7MZ0fHfrA" target="_blank" class="link-btn">
                 <i class="fa-brands fa-youtube"></i> YouTube Music
@@ -282,14 +371,12 @@
         </div>
     </section>
 
-   <footer>
-    <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. | 
-        <a href="https://ferwap.com/#privacy" target="_blank" style="color: #66fcf1; text-decoration: none;">Privacy Policy</a> | 
-        <a href="https://ferwap.com/#terms" target="_blank" style="color: #66fcf1; text-decoration: none;">Terms of Service</a>
-    </p>
-</footer>
-    
-</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. | 
+            <a href="https://ferwap.com/#privacy" target="_blank" style="color: #66fcf1; text-decoration: none;">Privacy Policy</a> | 
+            <a href="https://ferwap.com/#terms" target="_blank" style="color: #66fcf1; text-decoration: none;">Terms of Service</a>
+        </p>
     </footer>
 
     <script>
