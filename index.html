@@ -260,6 +260,51 @@
         footer a:hover {
             opacity: 0.8;
         }
+        /* Grid Diskografi / Rilisan */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .disc-card {
+            background: #1f2833;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #2d3748;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .disc-card:hover {
+            transform: translateY(-5px);
+            border-color: #66fcf1;
+            box-shadow: 0 6px 15px rgba(102, 252, 241, 0.2);
+        }
+
+        /* Batasi ukuran gambar agar kecil dan pas di dalam kartu */
+        .cover-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .disc-card h3 {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .disc-card p {
+            font-size: 0.7rem;
+            color: #888;
+        }
 
         /* ===================================================
            EFEK ANIMASI SCROLL REVEAL (BISA BERULANG ATAS/BAWAH)
