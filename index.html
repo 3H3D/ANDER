@@ -21,30 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Keyframes Animasi */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulseGlow {
-            0% {
-                box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(102, 252, 241, 0.7);
-            }
-            100% {
-                box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
-            }
-        }
-
         /* Navigasi / Navbar Atas */
         .navbar {
             display: flex;
@@ -93,7 +69,6 @@
         .hero {
             padding: 60px 20px 40px;
             background: #1f2833;
-            animation: fadeIn 1s ease-out;
         }
 
         .profile-img {
@@ -108,7 +83,6 @@
             font-size: 2.2rem;
             color: #66fcf1;
             border: 2px solid #66fcf1;
-            animation: pulseGlow 3s infinite ease-in-out;
             transition: transform 0.4s ease;
         }
 
@@ -134,7 +108,6 @@
             max-width: 650px;
             margin: 0 auto;
             border-bottom: 1px solid #1f2833;
-            animation: fadeIn 1.2s ease-out;
         }
 
         .section h2 {
@@ -287,6 +260,21 @@
         footer a:hover {
             opacity: 0.8;
         }
+
+        /* ===================================================
+           EFEK ANIMASI SCROLL REVEAL (MORTAR / BOUNCE UP)
+           =================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     </style>
 </head>
 <body>
@@ -303,7 +291,7 @@
     </header>
 
     <!-- Home / Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal">
         <div class="profile-img">
             <i class="fa-solid fa-microphone-lines"></i>
         </div>
@@ -312,20 +300,20 @@
     </section>
 
     <!-- Music / Discography Section -->
-    <section id="music" class="section">
+    <section id="music" class="section reveal">
         <h2>Discography</h2>
         <div class="music-grid">
-            <div class="disc-card">
+            <div class="disc-card reveal">
                 <i class="fa-solid fa-compact-disc"></i>
                 <h3>Sogdai Ya</h3>
                 <p>2026 • Single</p>
             </div>
-            <div class="disc-card">
+            <div class="disc-card reveal">
                 <i class="fa-solid fa-compact-disc"></i>
                 <h3>Kwiregtori</h3>
                 <p>2026 • Single</p>
             </div>
-            <div class="disc-card">
+            <div class="disc-card reveal">
                 <i class="fa-solid fa-compact-disc"></i>
                 <h3>TORU RE</h3>
                 <p>2026 • Single</p>
@@ -334,36 +322,36 @@
     </section>
 
     <!-- Platform Links Section -->
-    <section class="section">
+    <section class="section reveal">
         <h2>Listen & Follow</h2>
         <div class="links-list">
-            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="link-btn">
+            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="link-btn reveal">
                 <i class="fa-brands fa-spotify"></i> Spotify
             </a>
-            <a href="https://tidal.com/artist/84814563" target="_blank" class="link-btn">
+            <a href="https://tidal.com/artist/84814563" target="_blank" class="link-btn reveal">
                 <i class="fa-brands fa-tidal"></i> Tidal
             </a>
-            <a href="https://www.youtube.com/channel/UCiWwR7S1MS4EFT7MZ0fHfrA" target="_blank" class="link-btn">
+            <a href="https://www.youtube.com/channel/UCiWwR7S1MS4EFT7MZ0fHfrA" target="_blank" class="link-btn reveal">
                 <i class="fa-brands fa-youtube"></i> YouTube Music
             </a>
-            <a href="https://www.instagram.com/anderr05" target="_blank" class="link-btn">
+            <a href="https://www.instagram.com/anderr05" target="_blank" class="link-btn reveal">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
         <h2>About</h2>
-        <div class="info-box">
+        <div class="info-box reveal">
             <p>Deskripsi singkat tentang artis baru ini. Ceritakan gaya musik, latar belakang singkat, atau visi dalam bermusik secara ringkas dan profesional.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
         <h2>Management & Contact</h2>
-        <div class="info-box">
+        <div class="info-box reveal">
             <p>For bookings, press, and business inquiries:</p>
             <a href="mailto:email@domain.com" class="email-link">
                 <i class="fa-solid fa-envelope"></i> email@domain.com
@@ -372,16 +360,29 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="reveal">
         <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. | 
             <a href="https://ferwap.com/#privacy" target="_blank" style="color: #66fcf1; text-decoration: none;">Privacy Policy</a> | 
             <a href="https://ferwap.com/#terms" target="_blank" style="color: #66fcf1; text-decoration: none;">Terms of Service</a>
         </p>
     </footer>
 
+    <!-- Script Animasi Scroll Reveal -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            console.log("Official Artist Website Ready.");
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            reveals.forEach((el) => observer.observe(el));
         });
     </script>
 </body>
